@@ -35,7 +35,7 @@ async function ensureWallet(uid) {
   const snap = await ref.once('value');
   const wallet = snap.val() || {};
   if (wallet.shortId) {
-    return { shortId: wallet.shortId, coins: wallet.coins || 0 };
+    return { shortId: wallet.shortId, coins: wallet.coins || 0, earned: wallet.earned || 0 };
   }
   const counter = await db
     .ref('counters/shortId')
@@ -50,7 +50,7 @@ async function ensureWallet(uid) {
     await ref.child('coins').transaction((c) => c || 0);
   }
   const again = (await ref.once('value')).val() || {};
-  return { shortId: again.shortId, coins: again.coins || 0 };
+  return { shortId: again.shortId, coins: again.coins || 0, earned: again.earned || 0 };
 }
 
 // Take `amount` coins from a wallet. Returns true only if really taken.
