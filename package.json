@@ -1,5 +1,8 @@
 {
   "name": "atclive-token",
   "version": "1.0.0",
-  "dependencies": { "agora-token": "^2.0.4" }
+  "dependencies": {
+    "agora-token": "^2.0.4",
+    "firebase-admin": "^12.7.0"
+  }
 }
