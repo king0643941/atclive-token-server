@@ -1,0 +1,5 @@
+{
+  "name": "atclive-token",
+  "version": "1.0.0",
+  "dependencies": { "agora-token": "^2.0.4" }
+}
